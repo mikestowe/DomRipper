@@ -121,7 +121,6 @@ class DomRipper {
   	foreach($images[0] as $image) {
   		if(!in_array(md5($image),$scanned)) {
 	  		$scanned[] = md5($image);
-	  		//preg_match('/(src="[^"]+")|(width="[0-9]{1,4}")|(height="[0-9]{1,4})"/i',$image,$attr);
 	  		$img = array();
 	  		preg_match_all('/(src|width|height)=("[^"]*")/i',$image, $attr);
 	  		foreach($attr[0] as $tmp) {
@@ -168,7 +167,6 @@ class DomRipper {
   	foreach($objects[0] as $object) {
   		if(!in_array(md5($object),$scanned)) {
 	  		$scanned[] = md5($object);
-	  		//preg_match('/(src="[^"]+")|(width="[0-9]{1,4}")|(height="[0-9]{1,4})"/i',$image,$attr);
 	  		$obj = array();
 	  		preg_match_all('/(width|height)=("[^"]*")/i',$object, $attr);
 	  		foreach($attr[0] as $tmp) {
@@ -212,7 +210,7 @@ class DomRipper {
 
 
 // NON - APC SETUP
-//$dom->manual_startup('http://www.carm.org');
+//$dom->manual_startup('http://www.mikestowe.com');
 //echo $dom->innerHTML('content');
 
 // MUCH NICER, APC SETUP
